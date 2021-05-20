@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: esivre <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/20 16:05:10 by esivre            #+#    #+#             */
+/*   Updated: 2021/05/20 16:06:15 by esivre           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	unsigned char *c_dest;
-	unsigned char *c_src;
-	size_t i;
+	unsigned char	*c_dest;
+	unsigned char	*c_src;
+	size_t			i;
 
 	if (!dest)
 		return (NULL);

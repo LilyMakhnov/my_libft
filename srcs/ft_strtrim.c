@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: esivre <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/20 16:49:15 by esivre            #+#    #+#             */
+/*   Updated: 2021/05/20 16:50:38 by esivre           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int is_in_set(char a, char const *set)
+static int	is_in_set(char a, char const *set)
 {
 	while (*set)
 	{
@@ -12,9 +24,9 @@ static int is_in_set(char a, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *dest;
-	char *ret;
-	size_t size_dest;
+	char	*dest;
+	char	*ret;
+	size_t	size_dest;
 
 	size_dest = 0;
 	while (*s1 && is_in_set(*s1, set))

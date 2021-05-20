@@ -19,7 +19,7 @@ BONUS_OBJS		= $(BONUS:.c=.o)
 
 NAME    =	libft.a
 CC	=	gcc
-CFLAGS	=	-Wall -Werror -Wextra -lbsd
+CFLAGS	=	-Wall -Werror -Wextra
 
 .c.o:
 		${CC} ${CFLAGS} -c -I includes $< -o ${<:.c=.o}
