@@ -6,7 +6,7 @@
 /*   By: esivre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 16:50:46 by esivre            #+#    #+#             */
-/*   Updated: 2021/05/20 16:51:13 by esivre           ###   ########.fr       */
+/*   Updated: 2021/05/21 17:46:09 by esivre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*ret2;
 
 	dest = (char *)malloc(sizeof(char) * (len + 1));
-	if (!dest)
+	if (!dest || !s)
 		return (NULL);
 	ret = dest;
 	while (*s && start--)

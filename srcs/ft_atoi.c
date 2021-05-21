@@ -6,7 +6,7 @@
 /*   By: esivre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:09:30 by esivre            #+#    #+#             */
-/*   Updated: 2021/05/20 12:09:42 by esivre           ###   ########.fr       */
+/*   Updated: 2021/05/21 18:32:27 by esivre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *nbr)
 {
-	int	res;
-	int	sign;
+	unsigned long	res;
+	int				sign;
 
 	res = 0;
 	sign = 1;
@@ -25,6 +25,12 @@ int	ft_atoi(const char *nbr)
 		if (*nbr++ == '-')
 			sign *= -1;
 	while (ft_isdigit(*nbr))
+	{
+		 if (res >= 922337203685477580 && sign == 1)
+			 return (-1);
+		 if (res >= 922337203685477580 && sign == -1)
+			 return (0);
 		res = res * 10 + *nbr++ - '0';
+	}
 	return (sign * res);
 }

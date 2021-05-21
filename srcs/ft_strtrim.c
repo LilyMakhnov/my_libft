@@ -6,7 +6,7 @@
 /*   By: esivre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 16:49:15 by esivre            #+#    #+#             */
-/*   Updated: 2021/05/20 16:50:38 by esivre           ###   ########.fr       */
+/*   Updated: 2021/05/21 18:15:10 by esivre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*ret;
 	size_t	size_dest;
 
+	if (!s1 || !set)
+		return (NULL);
 	size_dest = 0;
 	while (*s1 && is_in_set(*s1, set))
 		s1++;

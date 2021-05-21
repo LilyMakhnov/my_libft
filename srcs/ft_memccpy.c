@@ -6,7 +6,7 @@
 /*   By: esivre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 16:05:10 by esivre            #+#    #+#             */
-/*   Updated: 2021/05/20 16:06:15 by esivre           ###   ########.fr       */
+/*   Updated: 2021/05/21 18:15:45 by esivre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	unsigned char	*c_src;
 	size_t			i;
 
-	if (!dest)
-		return (NULL);
 	c_dest = (unsigned char *)dest;
 	c_src = (unsigned char *)src;
 	i = 0;

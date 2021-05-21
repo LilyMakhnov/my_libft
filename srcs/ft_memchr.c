@@ -6,7 +6,7 @@
 /*   By: esivre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 16:07:02 by esivre            #+#    #+#             */
-/*   Updated: 2021/05/20 16:07:41 by esivre           ###   ########.fr       */
+/*   Updated: 2021/05/21 18:16:20 by esivre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	size_t			i;
 	unsigned char	*c_s;
 
-	if (!s)
-		return (NULL);
 	c_s = (unsigned char *)s;
 	i = 0;
 	while (i < n)

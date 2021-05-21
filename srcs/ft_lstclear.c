@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esivre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 16:10:44 by esivre            #+#    #+#             */
-/*   Updated: 2021/05/21 18:19:41 by esivre           ###   ########.fr       */
+/*   Created: 2021/05/21 16:02:14 by esivre            #+#    #+#             */
+/*   Updated: 2021/05/21 16:34:24 by esivre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	ft_lst_clear(t_list **lst, void (*del)(void*))
 {
-	char	*c_dest;
-	char	*c_src;
-	size_t	i;
-	
-	if (!dest && !src)
-		return (NULL);
-	c_dest = (char *)dest;
-	c_src = (char *)src;
-	if (dest > src)
+	t_list	*t;
+	t_list	*tmp;
+
+	t = *lst;
+	while (t)
 	{
-		while (n--)
-			c_dest[n] = c_src[n];
+		tmp = t->next;
+		ft_lstdelone(t, del);
+		t = tmp;
 	}
-	else
-	{
-		i = 0;
-		while (i < n)
-		{
-			c_dest[i] = c_src[i];
-			i++;
-		}
-	}
-	return (dest);
+	*lst = NULL;
 }
