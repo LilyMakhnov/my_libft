@@ -6,7 +6,7 @@
 /*   By: esivre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 16:18:56 by esivre            #+#    #+#             */
-/*   Updated: 2021/05/21 18:12:47 by esivre           ###   ########.fr       */
+/*   Updated: 2021/05/22 17:01:14 by esivre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,17 @@ static int	count_word(const char *str, char c)
 	return (countword);
 }
 
+static char	**free_split(char **dest, int i)
+{
+	int	j;
+
+	j = 0;
+	while (j < i)
+		free(dest[j++]);
+	free(dest);
+	return (NULL);
+}
+
 char	**ft_split(char const *str, char c)
 {
 	int		size;
@@ -84,7 +95,7 @@ char	**ft_split(char const *str, char c)
 	{
 		dest[i] = malloc(sizeof(char) * (sizeword(&pos, str, c) + 1));
 		if (!dest[i++])
-			return (NULL);
+			return (free_split(dest, i - 1));
 	}
 	i = 0;
 	pos = 0;
