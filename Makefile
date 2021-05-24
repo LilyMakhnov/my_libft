@@ -22,7 +22,7 @@ CC	=	gcc
 CFLAGS	=	-Wall -Wextra -Werror
 
 .c.o:
-		${CC} ${CFLAGS} -c -I includes $< -o ${<:.c=.o}
+		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 all:		${NAME}
 
